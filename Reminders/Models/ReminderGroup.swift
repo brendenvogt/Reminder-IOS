@@ -9,13 +9,19 @@ import Foundation
 
 struct ReminderGroup : Identifiable, Hashable {
     var id = UUID()
-    var category : ReminderCategory
+    var category : ReminderCategory = .general
     var reminders : [Reminder] = []
 }
 
 extension ReminderGroup {
-    static func sampleData() -> ReminderGroup {
-        let reminders = Array(repeating: Reminder.sampleData(), count: 10)
-        return ReminderGroup(id: UUID(), category: .allCases.randomElement() ?? .Work, reminders: reminders)
+    static func sampleData() -> [ReminderGroup] {
+        var reminderGroups: [ReminderGroup] = []
+        
+        for category in ReminderCategory.allCases {
+            reminderGroups.append(ReminderGroup(category: category, reminders: Reminder.sampleData()))
+        }
+
+        return reminderGroups
     }
+    
 }
