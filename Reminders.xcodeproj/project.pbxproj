@@ -20,6 +20,7 @@
 		E475310E26BF91E200CC6E4F /* ReminderGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475310D26BF91E200CC6E4F /* ReminderGroup.swift */; };
 		E475311126C2DB0100CC6E4F /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475311026C2DB0100CC6E4F /* ReminderViewModel.swift */; };
 		E475311326C2E1B400CC6E4F /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475311226C2E1B400CC6E4F /* CheckMarkView.swift */; };
+		E475311526C2E3DF00CC6E4F /* NewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475311426C2E3DF00CC6E4F /* NewReminderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E475310D26BF91E200CC6E4F /* ReminderGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroup.swift; sourceTree = "<group>"; };
 		E475311026C2DB0100CC6E4F /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
 		E475311226C2E1B400CC6E4F /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
+		E475311426C2E3DF00CC6E4F /* NewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				E475310626BF902B00CC6E4F /* MainView.swift */,
 				E475311226C2E1B400CC6E4F /* CheckMarkView.swift */,
+				E475311426C2E3DF00CC6E4F /* NewReminderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				E475310726BF902B00CC6E4F /* MainView.swift in Sources */,
 				E475311126C2DB0100CC6E4F /* ReminderViewModel.swift in Sources */,
 				E475310E26BF91E200CC6E4F /* ReminderGroup.swift in Sources */,
+				E475311526C2E3DF00CC6E4F /* NewReminderView.swift in Sources */,
 				E47530DE26BF8EAA00CC6E4F /* Reminders.xcdatamodeld in Sources */,
 				E475310C26BF90CC00CC6E4F /* ReminderCategory.swift in Sources */,
 			);
