@@ -16,10 +16,9 @@ struct Reminder: Identifiable, Hashable {
 
 extension Reminder {
     static func sampleData() -> [Reminder] {
-        let reminderProducer : Reminder = {
+        return (0..<10).map { index in
             let uuid = UUID()
             return Reminder(id: uuid, name: "Sample Reminder \(uuid)", date: Date())
-        }()
-        return Array(repeating: reminderProducer, count: 10)
+        }
     }
 }

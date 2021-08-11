@@ -8,7 +8,7 @@
 import Foundation
 
 final class ReminderViewModel : ObservableObject {
-    @Published var reminderGroups: [ReminderGroup] = ReminderGroup.sampleData()
+    @Published var reminderGroups: [ReminderGroup] = []//ReminderGroup.sampleData()
     
     func createReminder(for category: ReminderCategory, reminder: Reminder) {
         if let firstCategory = reminderGroups.firstIndex(where: {$0.category == category}) {

@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct RemindersApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
+    @StateObject private var viewModel = ReminderViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainView().environmentObject(viewModel)
         }
     }
 }

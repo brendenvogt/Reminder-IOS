@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct CheckMarkView: View {
-    var markedCompleted: Bool
 
+    var completed: Bool
     var accessibilityLabel: Text {
-        markedCompleted ? Text("Reminder Completed") : Text("Mark the reminder complete")
+        completed ? Text("Reminder Completed") : Text("Mark the reminder complete")
     }
-
     var imageName: String {
-        markedCompleted ? "checkmark.circle.fill" : "circle"
+        completed ? "checkmark.circle.fill" : "circle"
     }
-
     var foregroundColor: Color {
-        markedCompleted ? .accentColor : .gray
+        completed ? .white : .gray
     }
 
     var body: some View {
@@ -35,8 +33,8 @@ struct CheckMarkView: View {
 struct CheckMarkView_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
-            CheckMarkView(markedCompleted: true)
-            CheckMarkView(markedCompleted: false)
+            CheckMarkView(completed: true)
+            CheckMarkView(completed: false)
         }
     }
 }

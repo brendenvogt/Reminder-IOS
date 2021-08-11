@@ -20,7 +20,7 @@ struct NewReminderView: View {
             ScrollView {
                 
                 // Reminder Category
-                Text("Categories".capitalized).font(.headline)
+                Text("Categories".capitalized).headline()
                 Picker("please choose a category", selection: $category) {
                     ForEach(ReminderCategory.allCases, id: \.self) {
                         header in Text(header.name)
@@ -28,18 +28,39 @@ struct NewReminderView: View {
                 }
                 
                 // Reminder Name
-                Text("Reminder Name".capitalized).font(.headline)
+                Text("Reminder Name".capitalized).headline()
                 TextField("Reminder", text: $reminder.name)
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 15).foregroundColor(.init(white: 0.9)))
+                    .background(
+                        RoundedRectangle(cornerRadius: 15).foregroundColor(.background))
                     .padding(.horizontal)
                 
                 // Reminder Date
-                Text("Date".capitalized).font(.headline)
-                DatePicker("Pick a date", selection: $reminder.date)
+                Text("Date".capitalized).headline()
+                DatePicker("pick a date", selection: $reminder.date,
+                           in:Date()...,
+                           displayedComponents: .date)
+                    .labelsHidden()
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .padding()
                 
-            }
-        }
+                // Button
+                Button(action: {
+                    viewModel.createReminder(for: category, reminder: reminder)
+                    presentation.wrappedValue.dismiss()
+                }, label: {
+                    Text("Create Reminder".capitalized).kerning(1.0)
+                })
+                .disabled(!reminderButtonStatus)
+                .buttonStyle(CustomButtonStyle(status: reminderButtonStatus))
+                
+                
+            }.navigationTitle("New Reminder")
+        }.navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    var reminderButtonStatus: Bool {
+        !reminder.name.isEmpty && reminder.name != ""
     }
 }
 

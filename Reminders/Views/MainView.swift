@@ -8,10 +8,24 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @EnvironmentObject var viewModel: ReminderViewModel
+    @State private var showNewReminderView = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).onAppear(perform: {
-            print(ReminderGroup.sampleData())
-        })
+        NavigationView {
+            ReminderView()
+                .navigationTitle("Reminders")
+                .navigationBarItems(
+                    trailing:
+                        ImageButton(systemName: "plus", label: "Add reminder", action: {
+                            showNewReminderView.toggle()
+                        }))
+                .sheet(isPresented: $showNewReminderView) {
+                    NewReminderView().environmentObject(viewModel)
+                }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
