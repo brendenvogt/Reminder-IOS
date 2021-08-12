@@ -13,22 +13,21 @@ struct FeaturetteView: View {
 
     let insets : CGFloat = 15
     var body: some View {
-        VStack (alignment: .center, spacing: 20, content: {
+        VStack (alignment: .center, spacing: 25, content: {
             Spacer()
             Text(FeaturetteData.title)
-                .font(.system(size: 30, weight: .bold))
+                .font(.system(size: 34, weight: .bold))
                 .multilineTextAlignment(.center)
             ForEach(FeaturetteData.models) { model in
                 FeaturetteItemView(model: model)        .frame(maxWidth: .infinity, alignment: .leading)
             }
-            Spacer()
             Button(action: {
                 log("Continue pressed")
                 show = false
             }, label: {
                 Text("Continue")
             }).buttonStyle(CustomButtonStyle(status: true))
-            Spacer()
+            Spacer().frame(height:10)
         })
         .padding(EdgeInsets(top: 0, leading: insets, bottom: 0, trailing: insets))
     }
