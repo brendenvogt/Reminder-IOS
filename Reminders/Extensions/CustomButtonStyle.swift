@@ -11,7 +11,7 @@ struct CustomButtonStyle: ButtonStyle {
     var status: Bool
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .font(.body)
+            .font(.system(size: 18, weight: .bold))
             .foregroundColor(status ? .white : Color(.darkGray))
             .padding()
             .frame(maxWidth: .infinity, alignment: .center)

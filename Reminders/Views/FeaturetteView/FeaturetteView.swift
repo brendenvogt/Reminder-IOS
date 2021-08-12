@@ -11,7 +11,7 @@ struct FeaturetteView: View {
     
     @Binding var show : Bool
 
-    let insets : CGFloat = 20
+    let insets : CGFloat = 15
     var body: some View {
         VStack (alignment: .center, spacing: 20, content: {
             Spacer()
