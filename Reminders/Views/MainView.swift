@@ -11,7 +11,8 @@ struct MainView: View {
     
     @EnvironmentObject var viewModel: ReminderViewModel
     @State private var showNewReminderView = false
-
+    @State private var showFeaturetteView = true
+    
     var body: some View {
         NavigationView {
             ReminderView()
@@ -23,6 +24,8 @@ struct MainView: View {
                         }))
                 .sheet(isPresented: $showNewReminderView) {
                     NewReminderView().environmentObject(viewModel)
+                }.sheet(isPresented: $showFeaturetteView) {
+                    FeaturetteView(show: $showFeaturetteView)
                 }
         }
         .navigationViewStyle(StackNavigationViewStyle())

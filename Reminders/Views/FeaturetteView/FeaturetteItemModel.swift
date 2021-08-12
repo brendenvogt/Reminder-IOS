@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct FeaturetteItemModel: Identifiable {
+    var id: Int
+    let imageName: String
+    let title: String
+    let subtitle: String
+}
