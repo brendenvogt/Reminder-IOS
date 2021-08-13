@@ -10,15 +10,15 @@ import SwiftUI
 struct FeaturetteItemView: View {
     
     let model : FeaturetteItemModel
-    let imageSize : CGFloat = 30
-    let lineSpacing : CGFloat = 4
+    let imageSize : CGFloat = 35
+    let lineSpacing : CGFloat = 2
     var body: some View {
         HStack(spacing: 20) {
             Image(systemName: model.imageName)
                 .font(.system(size: imageSize))
                 .frame(width: imageSize, height: imageSize, alignment: .center)
             VStack(alignment: .leading, spacing: 2, content: {
-                Text(model.title).font(.system(size: 17, weight: .semibold)).bold().lineSpacing(lineSpacing)
+                Text(model.title).font(.system(size: 16, weight: .semibold)).bold().lineSpacing(lineSpacing)
                 Text(model.subtitle).font(.system(size: 16, weight: .regular)).foregroundColor(.init(white: 0.6)).lineSpacing(lineSpacing)
             })
         }

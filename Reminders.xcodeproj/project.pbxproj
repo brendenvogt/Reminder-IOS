@@ -34,6 +34,7 @@
 		E475312C26C39BBA00CC6E4F /* FeaturetteItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475312B26C39BBA00CC6E4F /* FeaturetteItemModel.swift */; };
 		E475312E26C39BD300CC6E4F /* FeaturetteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475312D26C39BD300CC6E4F /* FeaturetteData.swift */; };
 		E475313126C39D3300CC6E4F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475313026C39D3300CC6E4F /* Log.swift */; };
+		E4ABC7EF26C6CA9100FFF5DA /* NewGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ABC7EE26C6CA9100FFF5DA /* NewGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E475312B26C39BBA00CC6E4F /* FeaturetteItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturetteItemModel.swift; sourceTree = "<group>"; };
 		E475312D26C39BD300CC6E4F /* FeaturetteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturetteData.swift; sourceTree = "<group>"; };
 		E475313026C39D3300CC6E4F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		E4ABC7EE26C6CA9100FFF5DA /* NewGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				E475312026C37AF900CC6E4F /* ImageButton.swift */,
 				E475312226C382FE00CC6E4F /* ReminderListView.swift */,
 				E475312426C3832100CC6E4F /* ReminderCardView.swift */,
+				E4ABC7EE26C6CA9100FFF5DA /* NewGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				E475312826C39AFD00CC6E4F /* FeaturetteView.swift in Sources */,
 				E475312326C382FE00CC6E4F /* ReminderListView.swift in Sources */,
 				E475311726C3730000CC6E4F /* HeadlineExtension.swift in Sources */,
+				E4ABC7EF26C6CA9100FFF5DA /* NewGroupView.swift in Sources */,
 				E475311326C2E1B400CC6E4F /* CheckMarkView.swift in Sources */,
 				E475311D26C377DB00CC6E4F /* ColorExtension.swift in Sources */,
 				E475310726BF902B00CC6E4F /* MainView.swift in Sources */,

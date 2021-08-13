@@ -7,7 +7,7 @@
 
 import Foundation
 struct FeaturetteData {
-    static let title : String = "Welcome to Reminders"
+    static let title : String = "What's New in Reminders"
     static let models: [FeaturetteItemModel] = [
         FeaturetteItemModel(
             id: 1,

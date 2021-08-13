@@ -30,8 +30,6 @@ struct ReminderView: View {
             .bold()
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .background(RoundedRectangle(cornerRadius: 0)
-                            .fill(Color.headerBackground))
     }
 }
 

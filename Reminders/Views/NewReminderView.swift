@@ -11,52 +11,60 @@ struct NewReminderView: View {
     
     @State private var category : ReminderCategory = .general
     @State private var reminder : Reminder = Reminder()
-    
+
     @EnvironmentObject private var viewModel: ReminderViewModel
     @Environment(\.presentationMode) private var presentation
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                
-                // Reminder Category
-                Text("Categories".capitalized).headline()
-                Picker("please choose a category", selection: $category) {
-                    ForEach(ReminderCategory.allCases, id: \.self) {
-                        header in Text(header.name)
-                    }
-                }
+            Form {
                 
                 // Reminder Name
-                Text("Reminder Name".capitalized).headline()
-                TextField("Reminder", text: $reminder.name)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 15).foregroundColor(.background))
-                    .padding(.horizontal)
-                
-                // Reminder Date
-                Text("Date".capitalized).headline()
-                DatePicker("pick a date", selection: $reminder.date,
-                           in:Date()...,
-                           displayedComponents: .date)
-                    .labelsHidden()
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                    .padding()
-                
-                // Button
-                Button(action: {
-                    viewModel.createReminder(for: category, reminder: reminder)
-                    presentation.wrappedValue.dismiss()
-                }, label: {
-                    Text("Create Reminder".capitalized).kerning(1.0)
+                Section(header: Text("Reminder Name".capitalized),
+                        content: {
+                    TextField("Reminder", text: $reminder.name)
                 })
-                .disabled(!reminderButtonStatus)
-                .buttonStyle(CustomButtonStyle(status: reminderButtonStatus))
                 
+                // Reminder Category
+                Section(header:
+                            Text("Categories".capitalized),
+                        content: {
+                            Picker("Choose a category", selection: $category) {
+                                ForEach(ReminderCategory.allCases, id: \.self) {
+                                    header in Text(header.name)
+                                }
+                            }
+                        })
+                                
+                // Reminder Date
+                Section(header: Text("Date".capitalized), content: {
+                    DatePicker("Pick a date", selection: $reminder.date, displayedComponents: .date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                })
                 
-            }.navigationTitle("New Reminder")
+            }
+            .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
+            .navigationTitle("New Reminder")
+            .navigationBarItems(
+                leading: Button("Cancel", action: {
+                    presentation.wrappedValue.dismiss()
+                }),
+                trailing:
+                    Button(action: {
+                        viewModel.createReminder(for: category, reminder: reminder)
+                        presentation.wrappedValue.dismiss()
+                    }) {
+                        Text("Add").bold()
+                    }
+                    
+                    .disabled(!reminderButtonStatus)
+                
+            )
+            
+
+
         }.navigationViewStyle(StackNavigationViewStyle())
+
     }
     
     var reminderButtonStatus: Bool {
